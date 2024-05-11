@@ -1,0 +1,15 @@
+{
+    "name": "saboor/abstract-database",
+    "autoload": {
+        "psr-4": {
+            "AbstractDatabase\\": "src/"
+        }
+    },
+    "require": {
+        "atlas/statement": "^1.0",
+        "atlas/pdo": "^2.0",
+        "illuminate/database": "^11.6",
+        "fakerphp/faker": "^1.23",
+        "illuminate/pagination": "^11.7"
+    }
+}
