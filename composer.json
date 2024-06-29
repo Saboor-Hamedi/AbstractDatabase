@@ -2,7 +2,7 @@
     "name": "saboor/abstract-database",
     "autoload": {
         "psr-4": {
-            "AbstractDatabase\\": "src/"
+            "AbstractDatabase\\": "app/"
         }
     },
     "require": {
