@@ -7,19 +7,18 @@ namespace AbstractDatabase\Controllers;
 use AbstractDatabase\core\TemplateEngine;
 use AbstractDatabase\Config\Paths;
 
-class HomeController
+
+class AboutController
 {
     private TemplateEngine $view;
-
     public function __construct()
     {
         $this->view = new TemplateEngine(Paths::VIEWS);
     }
-    public function home()
+    public function about()
     {
-
-        echo $this->view->render('index.php', [
-            'title' => 'Home Page'
+        echo $this->view->render('about.php', [
+            'title' => 'About Page'
         ]);
     }
 }
