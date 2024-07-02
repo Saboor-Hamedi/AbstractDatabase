@@ -41,7 +41,7 @@ class Router
     $path = preg_replace('#/+#', '/', $path);
     return $path;
   }
-  public function dispatch(string $path, string $method)
+  public function dispatch(string $path, string $method, Container $container = null)
   {
     $path = $this->normalizePath($path); // normalize the path first
     $method = strtoupper($method); // call the method
@@ -55,7 +55,7 @@ class Router
 
       // Route found
       [$class, $functions] = $route['controller'];
-      $controllerInstance = new $class;
+      $controllerInstance = $container ? $container->resolve($class) : new $class;
       if (!method_exists($controllerInstance, $functions)) {
         echo "Method {$functions} does not exist in controller {$class}";
         return;

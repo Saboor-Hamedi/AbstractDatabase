@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
+use AbstractDatabase\Config\Paths;
+use AbstractDatabase\core\TemplateEngine;
+
 return [
-    'some_key' => 'some_value',
-    // more definitions
+    TemplateEngine::class  => fn () => new TemplateEngine(Paths::VIEWS)
 ];
