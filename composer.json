@@ -3,7 +3,10 @@
     "autoload": {
         "psr-4": {
             "AbstractDatabase\\": "app/"
-        }
+        },
+        "files": [
+            "app/Config/Routes.php"
+        ]
     },
     "require": {
         "atlas/statement": "^1.0",

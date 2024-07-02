@@ -13,6 +13,8 @@
             </a>
         </div>
     </div>
+
+
     <!-- Search Form -->
     <form method="GET" class="mt-4 w-full">
         <div class="flex">

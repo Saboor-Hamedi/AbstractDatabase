@@ -26,4 +26,11 @@ docker rm -vf $(docker ps -aq)
 docker rmi -f $(docker images -aq)
 # delete everything 
 docker system prune -a --volumes
+--
+htmlspecialchars convert HTML into plaintext
+strip_tags  remove HTML from page
 
+add functions on composer.json
+"files": [
+    "app/Config/Routes.php"
+]

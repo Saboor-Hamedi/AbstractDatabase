@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace AbstractDatabase\core;
 
+use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
+
 class TemplateEngine
 {
     public function __construct(private string $basePath)
@@ -23,5 +25,9 @@ class TemplateEngine
     public function resolve(string $path)
     {
         return "{$this->basePath}/{$path}";
+    }
+    public function escape($html)
+    {
+        return htmlspecialchars($html);
     }
 }

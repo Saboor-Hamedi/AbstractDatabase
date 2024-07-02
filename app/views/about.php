@@ -5,9 +5,8 @@
     <h3>About Page</h3>
 
     <hr />
-
     <!-- Escaping Data -->
-    <p>Escaping Data: </p>
+    <p>Escaping Data: <?php echo escape($script); ?></p>
 </section>
 <!-- End Main Content Area -->
 <?php require_once $this->resolve('partials/_footer.php'); ?>

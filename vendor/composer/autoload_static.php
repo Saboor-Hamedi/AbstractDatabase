@@ -15,6 +15,7 @@ class ComposerStaticInit2208574dd8085eb7f08bc0a40c7ebf24
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        'da84e068d77b99e6ef788c6c33acd725' => __DIR__ . '/../..' . '/app/Config/Routes.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -113,9 +114,9 @@ class ComposerStaticInit2208574dd8085eb7f08bc0a40c7ebf24
         ),
         'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/conditionable',
-            1 => __DIR__ . '/..' . '/illuminate/macroable',
-            2 => __DIR__ . '/..' . '/illuminate/collections',
+            0 => __DIR__ . '/..' . '/illuminate/collections',
+            1 => __DIR__ . '/..' . '/illuminate/conditionable',
+            2 => __DIR__ . '/..' . '/illuminate/macroable',
             3 => __DIR__ . '/..' . '/illuminate/support',
         ),
         'Illuminate\\Pagination\\' => 
