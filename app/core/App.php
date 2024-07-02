@@ -9,9 +9,23 @@ use AbstractDatabase\core\Router;
 class App
 {
   protected Router $router;
-  public function __construct()
+  protected Container $container;
+  public function __construct(string $containerDefinitionsPath = null)
   {
     $this->router = new Router();
+    $this->container = new Container();
+    if ($containerDefinitionsPath) {
+      if (file_exists($containerDefinitionsPath)) {
+        $containerDefinitions = require_once $containerDefinitionsPath;
+        if (is_array($containerDefinitions)) {
+          $this->container->addDefinitions($containerDefinitions);
+        } else {
+          throw new \Exception("container definitions file not return array:" . $containerDefinitionsPath);
+        }
+      } else {
+        throw new \Exception("container definition not found" . $containerDefinitionsPath);
+      }
+    }
   }
   public function run()
   {

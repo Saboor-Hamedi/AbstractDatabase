@@ -8,4 +8,5 @@ namespace AbstractDatabase\Config;
 class Paths
 {
     public const VIEWS = __DIR__ . '/../views';
+    public const SOURCE = __DIR__ .  '/../../app'; // point to the source directory of the project
 }
