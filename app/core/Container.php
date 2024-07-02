@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace AbstractDatabase\core;
 
+use AbstractDatabase\core\Exception\ContainerException;
 use ReflectionClass; // this is a default class of php
 
 class Container
@@ -16,6 +17,9 @@ class Container
     public function resolve(string $className)
     {
         $reflectionClass = new ReflectionClass($className);
+        if (!$reflectionClass->isInstantiable()) {
+            throw new ContainerException('Class' . $className . 'is not instantiable');
+        }
         dd($reflectionClass);
     }
 }
