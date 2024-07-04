@@ -5,11 +5,14 @@ declare(strict_types=1);
 namespace AbstractDatabase\Controllers;
 
 use AbstractDatabase\core\TemplateEngine;
+use AbstractDatabase\Services\ValidateService;
 
 class RegisterController
 {
-    public function __construct(protected TemplateEngine $view)
-    {
+    public function __construct(
+        protected TemplateEngine $view,
+        protected ValidateService $services
+    ) {
     }
 
     public function index()
@@ -18,6 +21,8 @@ class RegisterController
     }
     public function store()
     {
+
+        $this->services->ValidateRegister($_POST);
         dd($_POST);
     }
 }
