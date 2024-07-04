@@ -14,9 +14,10 @@ class ValidationExcepationMiddleware implements MiddlewareInterface
     public function process(callable $next)
     {
         try {
+
             $next();
         } catch (ValidationException $e) {
-            // dd($e->errors);
+            $_SESSION['errors'] = $e->errors;
             $referer = $_SERVER['HTTP_REFERER']; // redirect to the same directory which request came from
 
             redirectTo($referer);
