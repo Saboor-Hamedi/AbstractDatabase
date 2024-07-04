@@ -13,7 +13,7 @@ declare(strict_types=1);
 function escape(mixed $value): string
 {
     // Escape special characters for HTML output
-    return htmlspecialchars($value, ENT_QUOTES);
+    return trim(htmlspecialchars($value, ENT_QUOTES, 'UTF-8'));
 }
 
 /**
@@ -25,7 +25,7 @@ function escape(mixed $value): string
 function removeTags($value): string
 {
     // Strip all HTML tags from the string
-    return strip_tags($value);
+    return trim(strip_tags($value));
 }
 /**
  * Escapes special characters and removes HTML tags from a string.
@@ -36,5 +36,5 @@ function removeTags($value): string
 function escapeAndRemoveTags($value): string
 {
     // Escape special characters and remove tags simultaneously
-    return strip_tags(htmlspecialchars($value, ENT_QUOTES));
+    return trim(strip_tags(htmlspecialchars($value, ENT_QUOTES, 'UTF-8')));
 }

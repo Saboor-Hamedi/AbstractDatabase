@@ -5,7 +5,8 @@
             "AbstractDatabase\\": "app/"
         },
         "files": [
-            "app/Config/Routes.php"
+            "app/Config/Routes.php",
+            "app/Config/Middleware.php"
         ]
     },
     "require": {

@@ -15,4 +15,5 @@ return array(
     '72579e7bd17821bb1321b87411366eae' => $vendorDir . '/illuminate/support/helpers.php',
     '6e3fae29631ef280660b3cdad06f25a8' => $vendorDir . '/symfony/deprecation-contracts/function.php',
     'da84e068d77b99e6ef788c6c33acd725' => $baseDir . '/app/Config/Routes.php',
+    '39be6b25e48975c842b0db7f0f4a938a' => $baseDir . '/app/Config/Middleware.php',
 );

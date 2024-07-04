@@ -6,7 +6,7 @@
 
     <hr />
     <!-- Escaping Data -->
-    <p>Escaping Data: <?php echo escape($script); ?></p>
+    <p>Escaping Data: </p>
 </section>
 <!-- End Main Content Area -->
 <?php require_once $this->resolve('partials/_footer.php'); ?>

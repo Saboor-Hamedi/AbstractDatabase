@@ -16,6 +16,7 @@ class ComposerStaticInit2208574dd8085eb7f08bc0a40c7ebf24
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         'da84e068d77b99e6ef788c6c33acd725' => __DIR__ . '/../..' . '/app/Config/Routes.php',
+        '39be6b25e48975c842b0db7f0f4a938a' => __DIR__ . '/../..' . '/app/Config/Middleware.php',
     );
 
     public static $prefixLengthsPsr4 = array (

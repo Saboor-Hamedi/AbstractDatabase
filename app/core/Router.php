@@ -6,6 +6,12 @@ namespace AbstractDatabase\core;
 
 class Router
 {
+  /**
+   * Multiple middleware can be store a router class
+   * 
+   */
+  protected array $middlewares = []; // initial value is empty
+
   protected array $routes = [];
   public function add(string $method, string $path, array $controller)
   {
@@ -61,9 +67,19 @@ class Router
         return;
       }
 
-      $controllerInstance->{$functions}();
+      $action = fn () => $controllerInstance->{$functions}();
+      foreach ($this->middlewares as $middleware) {
+        $middlewareInstance = new $middleware;
+        $action = fn () => $middlewareInstance->process($action);
+      }
+      $action();
+
       return;
     }
     echo "Route not found for path: {$path} and method: {$method}";
+  }
+  public function addMiddleware(string $middleware)
+  {
+    $this->middlewares[] = $middleware;
   }
 }
