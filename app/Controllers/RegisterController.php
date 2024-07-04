@@ -6,16 +6,18 @@ namespace AbstractDatabase\Controllers;
 
 use AbstractDatabase\core\TemplateEngine;
 
-class HomeController
+class RegisterController
 {
-
-
     public function __construct(protected TemplateEngine $view)
     {
     }
-    public function home()
-    {
 
-        echo $this->view->render('index.php');
+    public function index()
+    {
+        echo $this->view->render('register/index.php');
+    }
+    public function store()
+    {
+        dd($_POST);
     }
 }
