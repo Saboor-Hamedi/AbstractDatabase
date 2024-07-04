@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
 
 class TemplateEngine
 {
+    protected array $globalTemplateData = [];
+
     public function __construct(private string $basePath)
     {
     }
@@ -15,6 +17,7 @@ class TemplateEngine
     public function render(string $template, array $data = [])
     {
         extract($data, EXTR_SKIP);
+        extract($this->globalTemplateData, EXTR_SKIP);
         ob_start();
         require_once $this->resolve($template);
         $output = ob_get_contents();
@@ -26,8 +29,8 @@ class TemplateEngine
     {
         return "{$this->basePath}/{$path}";
     }
-    public function escape($html)
+    public function addGlobal(string $key, mixed $value)
     {
-        return htmlspecialchars($html);
+        $this->globalTemplateData[$key] = $value;
     }
 }
