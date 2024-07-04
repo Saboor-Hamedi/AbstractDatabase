@@ -6,7 +6,8 @@
         },
         "files": [
             "app/Config/Routes.php",
-            "app/Config/Middleware.php"
+            "app/Config/Middleware.php",
+            "app/func/redirectTo.php"
         ]
     },
     "require": {

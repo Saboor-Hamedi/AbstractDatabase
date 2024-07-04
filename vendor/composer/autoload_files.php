@@ -16,4 +16,5 @@ return array(
     '6e3fae29631ef280660b3cdad06f25a8' => $vendorDir . '/symfony/deprecation-contracts/function.php',
     'da84e068d77b99e6ef788c6c33acd725' => $baseDir . '/app/Config/Routes.php',
     '39be6b25e48975c842b0db7f0f4a938a' => $baseDir . '/app/Config/Middleware.php',
+    '39a24a91c858d40fae672f813392f3e2' => $baseDir . '/app/func/redirectTo.php',
 );

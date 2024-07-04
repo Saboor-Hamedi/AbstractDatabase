@@ -6,8 +6,10 @@ namespace AbstractDatabase\Config;
 
 use AbstractDatabase\core\App;
 use AbstractDatabase\Middleware\TemplateDataMiddleware;
+use AbstractDatabase\Middleware\ValidationExcepationMiddleware;
 
 function registerMiddleware(App $app)
 {
-    $app->addMiddleware(TemplateDataMiddleware::class);
+    $app->addMiddleware(TemplateDataMiddleware::class); // this is for template, to pass data, like title 
+    $app->addMiddleware(ValidationExcepationMiddleware::class); // this is for form validation 
 }
