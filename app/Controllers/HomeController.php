@@ -11,14 +11,12 @@ class HomeController
 {
 
 
-    public function __construct(private TemplateEngine $view)
+    public function __construct(protected TemplateEngine $view)
     {
     }
     public function home()
     {
 
-        echo $this->view->render('index.php', [
-            'title' => 'Home',
-        ]);
+        echo $this->view->render('index.php');
     }
 }

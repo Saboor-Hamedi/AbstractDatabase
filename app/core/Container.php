@@ -11,6 +11,7 @@ use ReflectionNamedType;
 class Container
 {
     protected array $definitions = [];
+    protected array $resolved = [];
     public function addDefinitions(array $newDefinitions)
     {
         $this->definitions = [...$this->definitions, ...$newDefinitions];
@@ -50,8 +51,14 @@ class Container
         if (!array_key_exists($id, $this->definitions)) {
             throw new ContainerException("Class {$id} does not exists in container");
         }
+        // this is the title singleton 
+        if (array_key_exists($id, $this->resolved)) {
+            return $this->resolved[$id];
+        }
         $factory = $this->definitions[$id];
         $dependency = $factory();
+        // singleton 
+        $this->resolved[$id]  = $dependency;
         return $dependency;
     }
 }
