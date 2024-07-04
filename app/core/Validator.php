@@ -12,9 +12,6 @@ class Validator
 {
     protected array $rules = [];
 
-
-
-
     /**
      * validation: set rules here, 
      * this function accepts rules
