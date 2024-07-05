@@ -30,7 +30,7 @@ class Validator
                 if (str_contains($rule, ':')) {
                     [$rule, $ruleParams] = explode(':', $rule);
                     $ruleParams = explode(',', $ruleParams);
-                    dd($ruleParams);
+                    // dd($ruleParams);
                 }
                 $ruleValidator = $this->rules[$rule];
                 if ($ruleValidator->validate($formData, $fieldName, $ruleParams)) {
@@ -41,7 +41,6 @@ class Validator
         }
         if (count($errors)) {
             throw new ValidationException($errors);
-            // dd($errors);
         }
     }
 }
