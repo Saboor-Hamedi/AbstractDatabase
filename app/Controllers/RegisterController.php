@@ -21,8 +21,6 @@ class RegisterController
     }
     public function store()
     {
-
         $this->services->ValidateRegister($_POST);
-        dd($_POST);
     }
 }
