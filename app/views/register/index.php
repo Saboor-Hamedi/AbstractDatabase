@@ -1,16 +1,21 @@
-<?php require_once $this->resolve('partials/_header.php'); ?>
+<?php
+
+use function AbstractDatabase\func\check;
+use function AbstractDatabase\func\load;
+
+require_once $this->resolve('partials/_header.php'); ?>
 <section class="max-w-2xl mx-auto mt-12 p-4 bg-white shadow-md border border-gray-200 rounded">
     <form action="store" method="POST" class="grid grid-cols-1 gap-6">
         <!-- Email -->
         <label class="block">
             <span class="text-gray-700">Email address</span>
-            <input name="email" type="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="john@example.com" />
+            <input value="<?php echo escape($oldFormData['email'] ?? ''); ?>" name="email" type="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="john@example.com" />
             <?php error($errors, 'email'); ?>
         </label>
         <!-- Age -->
         <label class="block">
             <span class="text-gray-700">Age</span>
-            <input name="age" type="number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="" />
+            <input value="<?php echo escape($oldFormData['age'] ?? ''); ?>" name="age" type="number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="" />
             <?php error($errors, 'age'); ?>
         </label>
         <!-- Country -->
@@ -18,8 +23,8 @@
             <span class="text-gray-700">Country</span>
             <select name="countries" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                 <option value="USA">USA</option>
-                <option value="Canada">Canada</option>
-                <option value="Mexico">Mexico</option>
+                <option value="Canada" <?php echo load($oldFormData, 'countries', 'Canada'); ?>>Canada</option>
+                <option value="Mexico" <?php echo load($oldFormData, 'countries', 'Mexico'); ?>>Mexico</option>
                 <option value="Invalid">Invalid Country</option>
             </select>
             <?php error($errors, 'countries'); ?>
@@ -27,7 +32,7 @@
         <!-- Social Media URL -->
         <label class="block">
             <span class="text-gray-700">Social Media URL</span>
-            <input name="media" type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="" />
+            <input value="<?php echo escape($oldFormData['media'] ?? ''); ?>" name="media" type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="" />
             <?php error($errors, 'media'); ?>
         </label>
         <!-- Password -->
@@ -47,10 +52,11 @@
             <div class="mt-2">
                 <div>
                     <label class="inline-flex items-center">
-                        <input name="accept" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50" type="checkbox" />
+                        <input name="accept" value="checked" <?php echo check($oldFormData, 'accept', 'checked');  ?>class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50" type="checkbox" />
                         <span class="ml-2">I accept the terms of service.</span>
                     </label>
                 </div>
+                <?php error($errors, 'accept'); ?>
             </div>
         </div>
         <button type="submit" class="block w-full py-2 bg-indigo-600 text-white rounded">

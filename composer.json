@@ -7,7 +7,8 @@
         "files": [
             "app/Config/Routes.php",
             "app/Config/Middleware.php",
-            "app/func/redirectTo.php"
+            "app/func/redirectTo.php",
+            "app/func/OptionOldValue.php"
         ]
     },
     "require": {

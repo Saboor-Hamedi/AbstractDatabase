@@ -17,9 +17,10 @@ class ValidationExcepationMiddleware implements MiddlewareInterface
 
             $next();
         } catch (ValidationException $e) {
+            $oldFormData = $_POST;
             $_SESSION['errors'] = $e->errors;
             $referer = $_SERVER['HTTP_REFERER']; // redirect to the same directory which request came from
-
+            $_SESSION['oldFormData'] = $oldFormData; // store the old data, on the form;
             redirectTo($referer);
         }
     }

@@ -18,6 +18,7 @@ class ComposerStaticInit2208574dd8085eb7f08bc0a40c7ebf24
         'da84e068d77b99e6ef788c6c33acd725' => __DIR__ . '/../..' . '/app/Config/Routes.php',
         '39be6b25e48975c842b0db7f0f4a938a' => __DIR__ . '/../..' . '/app/Config/Middleware.php',
         '39a24a91c858d40fae672f813392f3e2' => __DIR__ . '/../..' . '/app/func/redirectTo.php',
+        '3e833d0a9658bf1d83edde9c6998e597' => __DIR__ . '/../..' . '/app/func/OptionOldValue.php',
     );
 
     public static $prefixLengthsPsr4 = array (

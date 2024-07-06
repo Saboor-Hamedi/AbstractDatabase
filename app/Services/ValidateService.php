@@ -7,8 +7,10 @@ namespace AbstractDatabase\Services;
 use AbstractDatabase\core\Validator;
 use AbstractDatabase\Rules\EmailRule;
 use AbstractDatabase\Rules\inRule;
+use AbstractDatabase\Rules\MatchRule;
 use AbstractDatabase\Rules\MinRule;
 use AbstractDatabase\Rules\RequireRule;
+use AbstractDatabase\Rules\UrlRule;
 
 class ValidateService
 {
@@ -20,16 +22,18 @@ class ValidateService
         $this->validator->add('email', new EmailRule());
         $this->validator->add('min', new MinRule());
         $this->validator->add('in', new inRule());
+        $this->validator->add('url', new UrlRule());
+        $this->validator->add('match', new MatchRule());
     }
     public function ValidateRegister(array $formData)
     {
         $this->validator->validate($formData, [
             'email' => ['required', 'email'],
             'age' => ['required', 'min:18'],
-            'countries' => ['required', 'in:USA, Canada, Mexico'],
-            'media' => ['required'],
+            'countries' => ['required'],
+            'media' => ['required', 'url'],
             'password' => ['required'],
-            'confirmPassword' => ['required'],
+            'confirmPassword' => ['required', 'match:password'],
             'accept' => ['required'],
         ]);
     }
