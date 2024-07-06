@@ -1,5 +1,5 @@
 # PHP MVC - Abstract Database. 
 >[!NOTE]
 > This is not my own code, I have a bought a course from udemy and followed him, he is a pretty much clear instructure, I recommend [this](https://www.udemy.com/course/complete-modern-php-developer/?couponCode=KEEPLEARNING) to everybody. 
-> I have followed the full course and learnt a lot. 
+> Thank you :[@ZTMLuisRamirez](https://github.com/ZTMLuisRamirez)
 --- 
