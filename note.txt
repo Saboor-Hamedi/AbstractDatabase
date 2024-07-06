@@ -1,3 +1,4 @@
+
 -- import database into docker 
 docker exec -i phpbeginner-mariadb-1  mariadb -u admin -psaboor123 school < table.sql
 
@@ -36,4 +37,3 @@ add functions on composer.json
 ]
 
 This is '...' is separate operator
-
