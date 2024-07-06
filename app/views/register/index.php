@@ -52,13 +52,14 @@ require_once $this->resolve('partials/_header.php'); ?>
             <div class="mt-2">
                 <div>
                     <label class="inline-flex items-center">
-                        <input name="accept" value="checked" <?php echo check($oldFormData, 'accept', 'checked');  ?>class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50" type="checkbox" />
+                        <input name="accept" value="checked" <?php echo check($oldFormData, 'accept', 'checked'); ?> class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50" type="checkbox" />
                         <span class="ml-2">I accept the terms of service.</span>
                     </label>
                 </div>
                 <?php error($errors, 'accept'); ?>
             </div>
         </div>
+
         <button type="submit" class="block w-full py-2 bg-indigo-600 text-white rounded">
             Submit
         </button>
